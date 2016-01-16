@@ -116,3 +116,27 @@ var obfuscate = function(s)
 	};
 	return out
 }
+
+var update = function()
+{
+	var func = function(s){return s};
+	var radios = document.getElementsByName("func");
+	for(var i = 0; i < radios.length; ++i)
+	{
+		if(radios[i].checked)
+		{
+			switch(radios[i].value)
+			{
+				case "rotn": func = function(s){return rotn(parseInt(document.getElementById("rotnum").value), s)}; break;
+				case "widen": func = widen; break;
+				case "obfuscate": func = obfuscate; break;
+				default: break;
+			}
+			break;
+		}
+	}
+	var input = document.getElementById("input").value;
+	output = func(input);
+	document.getElementById("output").value = output;
+	return;
+}
