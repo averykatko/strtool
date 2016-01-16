@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>strtool</title>
+	<script type="text/javascript" src="strtool.js"></script>
+</head>
+<body>
+	<p><form onchange="update()">
+		<input type="radio" name="func" value="rotn"> rot <input type="number" id="rotnum" value="13" min="-infinity" max="infinity"> <br>
+		<input type="radio" name="func" value="widen"> ascii → fullwidth <br>
+		<input type="radio" name="func" value="obfuscate"> obfuscate ascii <br>
+		<!--<input type="radio" name="func" value="math"> math
+			<select id="mathstyle" onchange="update()">
+				<option value="serif" selected>serif</option>
+				<option value="sans-serif">sans-serif</option>
+				<option value="calligraphy">calligraphy</option>
+				<option value="fraktur">fraktur</option>
+				<option value="monospace">monospace</option>
+				<option value="blackboard">blackboard</option>
+			</select>
+			<input type="checkbox" name="bold"> bold
+			<input type="checkbox" name="italic"> italic
+			<br>-->
+	</form></p>
+	<p><textarea id="input" cols="80" rows="12" onkeyup="update()" onchange="update()"></textarea></p>
+	<p>↓</p>
+	<p><textarea id="output" cols="80" rows="12" readonly></textarea></p>
+</body>
+</html>
