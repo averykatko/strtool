@@ -241,9 +241,5 @@ var update = function()
 		"var func = " + func.toString() +
 		"document.execCommand('insertText', false, func(window.getSelection()+''))})();"
 		);
-	/*if(0 == link.childNodes.length)
-		link.appendChild(document.createTextNode(fname));
-	else
-		link.childNodes[0] = document.createTextNode(fname);*/
 	link.innerHTML = fname;
 }
