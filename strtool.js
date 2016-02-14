@@ -119,11 +119,13 @@ var obfuscate = function(s)
 
 var obfuscate2 = function(s)
 {
+	if(0 == s.length)
+		return s;
 	var check = function(str)
 	{
 		var nonlat = function(c)
 		{
-			return c in [
+			return (-1 != [
 				"Α", "А", "Ɑ", "𝚨", "𝛢", "𝜜", "𝝖", "𝞐", "ᴀ", "Ꭿ", "Ꭺ", "𐌀",
 				"Β", "В", "Б", "ʙ", "฿", "𝚩", "𝛣", "𝜝", "𝝗", "𝞑", "Ᏸ", "Ᏼ", "ᛒ", "𐌁",
 				"ʗ", "ℂ", "₡", "₵", "С", "Ꮯ", "𐌂",
@@ -176,7 +178,7 @@ var obfuscate2 = function(s)
 				"χ", "х", "χ", "𝛘", "𝜒", "𝝌", "𝞆", "𝟀", "ᶍ", "ҳ", "ӽ",
 				"у", "ү", "ұ", "γ", "𝛄", "𝛾", "𝜸", "𝝲", "𝞬",
 				"ζ", "з", "ɀ", "ʒ", "ʑ", "ʐ", "𝛇", "𝜁", "𝜻", "𝝵", "𝞯", "ƺ", "ᶎ", "ʓ"
-			];
+			].indexOf(c));
 		};
 		for(var i = 0; i < str.length; ++i)
 		{
@@ -236,5 +238,4 @@ var update = function()
 		"document.execCommand('insertText', false, func(window.getSelection()+''))})();"
 		);
 	link.appendChild(document.createTextNode(fname));
-	return;
 }
