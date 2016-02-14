@@ -180,12 +180,16 @@ var obfuscate2 = function(s)
 				"ζ", "з", "ɀ", "ʒ", "ʑ", "ʐ", "𝛇", "𝜁", "𝜻", "𝝵", "𝞯", "ƺ", "ᶎ", "ʓ"
 			].indexOf(c));
 		};
+		var u = true;
 		for(var i = 0; i < str.length; ++i)
 		{
 			if(nonlat(str[i]))
 				return true;
+			var code = str.charCodeAt(i);
+			if((code >= 0x41 && code <= 0x5a) || (code >= 0x61 && code <= 0x7a))
+				u = false;
 		};
-		return false;
+		return u;
 	};
 	var out;
 	do
