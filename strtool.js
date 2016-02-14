@@ -235,6 +235,6 @@ var update = function()
 		"var func = " + func.toString() +
 		"document.execCommand('insertText', false, func(window.getSelection()+''))})();"
 		);
-	if 
+	link.appendChild(document.createTextNode(fname));
 	return;
 }
