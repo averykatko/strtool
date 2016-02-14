@@ -189,7 +189,7 @@ var obfuscate2 = function(s)
 	do
 	{
 		out = obfuscate(s);
-	} while !check(out);
+	} while (!check(out));
 	return out;
 };
 
